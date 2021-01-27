@@ -1,0 +1,15 @@
+table, th, tr, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+a {
+    
+    color: green;
+    text-decoration: none;
+}
+
+ul a {
+    color: green;
+    font-weight: bold;
+}
