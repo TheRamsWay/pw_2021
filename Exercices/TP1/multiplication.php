@@ -7,24 +7,37 @@
     <title>Table de multiplication</title>
 </head>
 <body>
-    <h1>Table de multiplication</h1>
-    <table>
     <?php
-        for($i=0; $i<=10; $i++){
-            print("<tr>");
-            for($j=0; $j<=10; $j++){
-                $calc = $j*$i;
-                if ($i == 0) {
-                    print("<th> $j </th>");
-                } else if ($j == 0) {
-                    print("<th> $i </th>");
-                } else {
-                    print("<td> $calc </td>");
-                }
-            }
-            print("</tr>");
-        }
+      
+    if(!isset($_REQUEST["lignes"])) {
+        print("Pas de lignes entrées! <br>");
+    } else if (!isset($_REQUEST["colonnes"])) {
+        print("Pas de colonnes entrées! <br>");
+    } else {
+        print("<table>");
+        $lignes = $_REQUEST["lignes"];
+        $colonnes = $_REQUEST["colonnes"];
+    
+        if(isset($lignes) && isset($colonnes)){
+            for($i=0; $i<=$lignes; $i++){
+                print("<tr>");
+                for($j=0; $j<=$colonnes; $j++){
+                    $calc = $j*$i;
+                    if ($i == 0) {
+                        print("<th> $j </th>");
+                    } else if ($j == 0) {
+                        print("<th> $i </th>");
+                    } else {
+                        print("<td> $calc </td>");
+                    }
+                }   
+                print("</tr>");
+            }   
+        } 
+        print("</table>");
+    }
+           
     ?>
-    </table>
+    
 </body>
 </html>
