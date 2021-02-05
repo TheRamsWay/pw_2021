@@ -6,3 +6,7 @@ table, th, tr, td {
 body {
     background-color: rgb(253, 155, 44);
 }
+
+tr:hover {
+    background-color: yellow;
+}

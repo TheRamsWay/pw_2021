@@ -7,37 +7,37 @@
     <title>Table de multiplication</title>
 </head>
 <body>
+    <table>
     <?php
       
-    if(!isset($_REQUEST["lignes"])) {
-        print("Pas de lignes entrées! <br>");
-    } else if (!isset($_REQUEST["colonnes"])) {
-        print("Pas de colonnes entrées! <br>");
-    } else {
-        print("<table>");
-        $lignes = $_REQUEST["lignes"];
-        $colonnes = $_REQUEST["colonnes"];
-    
-        if(isset($lignes) && isset($colonnes)){
-            for($i=0; $i<=$lignes; $i++){
-                print("<tr>");
-                for($j=0; $j<=$colonnes; $j++){
-                    $calc = $j*$i;
-                    if ($i == 0) {
-                        print("<th> $j </th>");
-                    } else if ($j == 0) {
-                        print("<th> $i </th>");
-                    } else {
-                        print("<td> $calc </td>");
-                    }
-                }   
-                print("</tr>");
+    $lignes = $_REQUEST["lignes"];
+    $colonnes = $_REQUEST["colonnes"];
+    if (empty($lignes)) {
+        $lignes = 10;
+    }
+    if (empty($colonnes)) {
+        $colonnes = 10;
+    }
+
+    if(isset($lignes) && isset($colonnes)){
+        for($i=0; $i<=$lignes; $i++){
+            print("<tr>");
+            for($j=0; $j<=$colonnes; $j++){
+                $calc = $j*$i;
+                if ($i == 0) {
+                    print("<th> $j </th>");
+                } else if ($j == 0) {
+                    print("<th> $i </th>");
+                } else {
+                    print("<td> $calc </td>");
+                }
             }   
-        } 
-        print("</table>");
+            print("</tr>");
+        }   
     }
            
     ?>
+    </table>
     
 </body>
 </html>
