@@ -43,7 +43,7 @@
                 <?php foreach($list["ap"] as $apName => $ap): ?>
                     <tr>
                         <th><?= $apName ?></th>
-                        <td><?= $ap["lieu"] ?></td>
+                        <td><?= $ap["adr"] ?></td>
                         <td><?= $ap["lon"] ?></td>
                         <td><?= $ap["lat"] ?></td>
                         <td><?= $ap["dist"] ?></td>
