@@ -1,0 +1,197 @@
+html {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    height: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center top;
+    margin: 0;
+    font-family: sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+@supports (scrollbar-width: thin) {
+    body {
+        scrollbar-width: thin;
+        scrollbar-color: rgb(14, 232, 253) rgba(9,45,56,1);
+    }
+}
+
+body::-webkit-scrollbar {
+    width: 9px;
+    
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(9,45,56,1);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgb(14, 232, 253);
+    border-width: 0 1px;
+    border-style: solid;
+    border-color: rgba(9, 45, 56, 1);
+}
+
+.gradText {
+    background-image: linear-gradient(90deg, rgb(140, 245, 255) 0%, rgb(22, 178, 223) 65%, rgb(23, 118, 147) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+nav, main, footer {
+    background-color: rgba(0, 17, 28, 0.8);
+}
+
+@supports (backdrop-filter: none) {
+    nav, main, footer {
+        backdrop-filter: blur(3px);
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 0.5em;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+nav > h1 {
+    margin: auto 1em;
+}
+
+main {
+    margin: 1em auto;
+    width: 80%;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.centered {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(14, 232, 253);
+}
+
+.data {
+    display: flex;
+    margin: 1em 0;
+}
+
+.data:first-child {
+    margin-top: 0;
+}
+
+.data:last-child {
+    margin-bottom: 0;
+}
+
+.data > div {
+    margin-left: 1em;
+}
+
+.dataGrid {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1em;
+}
+
+.dataGrid > div {
+    display: flex;
+    flex: 0;
+    align-items: center;
+    min-width: 20em;
+}
+
+.dataGrid > div > div {
+    margin-left: 1em;
+}
+
+.poster {
+    width: 10em;
+    height: 100%;
+    border-radius: 0.5em;
+}
+
+.profile {
+    height: 5em;
+    width: auto;
+    border-radius: 0.5em;
+}
+
+.profileHigh {
+    width: 18em;
+    height: 100%;
+    border-radius: 0.5em;
+}
+
+.posterSmall {
+    height: 8em;
+    width: auto;
+    border-radius: 0.5em;
+}
+
+#header > .poster {
+    width: 18em;
+}
+
+.search {
+    max-width: 35em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.search > input {
+    padding: 0.65em;
+    border: 1px solid rgb(14, 200, 218);
+    font-size: 1em;
+    outline: none;
+}
+
+nav > .search > input {
+    font-size: revert;
+}
+
+.search > input[type=text] {
+    width: 100%;
+    border-radius: 2em 0 0 2em;
+    padding-left: 0.9em;
+}
+
+.search > input[type=submit] {
+    border-radius: 0 2em 2em 0;
+    padding-right: 0.9em;
+    color: white;
+    background-image: linear-gradient(90deg, rgb(14, 200, 218) 0%, rgb(20, 142, 177) 100%);
+}
+
+.search > input:hover, .search > input:focus {
+    box-shadow: 0px 0px 5px rgb(14, 232, 253);
+}
+
+.search > input::placeholder {
+    font-style: italic;
+}
+
+footer {
+    font-size: 0.8em;
+    padding: 0 1em;
+}
